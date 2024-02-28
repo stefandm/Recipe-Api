@@ -62,7 +62,7 @@ input {
   outline: none;
   border-radius: 1rem;
   height: 1.8rem;
-  padding: 10px;
+  padding: 1rem;
   border: none;
 }
 
@@ -102,26 +102,28 @@ input:focus {
 #image {
   max-height: 40vh;
   max-width: 40vw;
-  border-radius: 0.2rem;
-
-  box-shadow: 0.2rem 0.2rem 0.2rem rgba(0, 0, 0, 0.466);
+  border-radius: 0.3rem;
+  box-shadow: 3rem 2rem rgba(5, 112, 80, 0.336);
+  border: 1px solid rgba(1, 22, 16, 0.623);
 }
 
 #save {
-  outline: 1px solid rgba(158, 77, 2, 0.842);
-  box-shadow: 0.2rem 0.2rem 0.2rem rgba(170, 18, 7, 0.466);
+  box-shadow: 0.2rem 0.2rem 0.2rem rgba(54, 7, 3, 0.466);
   border-radius: 1rem;
-  width: 30%;
-  height: 3vh;
+  width: 4rem;
+  padding: 0.3rem 0 0.3rem 0;
   margin-top: 2vh;
-  background-color: rgb(253, 253, 253);
   border: none;
   opacity: 0.8;
+  color: rgb(5, 131, 22);
 }
 
-#save i {
-  color: rgb(182, 88, 12);
+#save:hover > i {
+  color: rgba(255, 0, 0, 0.705);
+  transform: scale(105%);
+  transition: 0.3s ease;
 }
+
 .lists {
   background-color: hsla(73, 100%, 51%, 0.13);
   display: flex;
@@ -197,6 +199,8 @@ ul {
 
 .savedListElement button:hover {
   color: red;
+  transform: scale(110%);
+  transition: 0.15s ease;
 }
 
 @media (orientation: portrait) {

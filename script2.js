@@ -7,7 +7,7 @@ addEventListener("DOMContentLoaded", () => {
 });
 
 const recipe = document.querySelector("#recipe");
-const image = document.querySelector("#image");
+const image = document.querySelector("img");
 const title = document.querySelector("#title");
 const lists = document.querySelector(".lists");
 const ingredients = document.querySelector("#ingredients");
