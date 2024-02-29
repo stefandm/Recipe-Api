@@ -48,6 +48,7 @@ async function getRecipe() {
     clearInput();
   } catch (err) {
     title.innerText = "Could not find that recipe.";
+    image.style.display = "none";
     recipe.innerHTML = ``;
     recipe.style.display = "none";
     lists.style.display = "none";
@@ -105,6 +106,8 @@ function displayRecipe(data) {
       measures.appendChild(listElement);
     }
   }
+
+  image.style.display = "block";
   displayedRecipe = data;
 }
 
