@@ -67,9 +67,10 @@ function displayRecipe(data) {
   console.log("recipe to be displayed inside displayRecipe", data);
 
   recipe.innerText = data.strInstructions;
-  image.src = data.strMealThumb;
   title.innerText = data.strMeal;
 
+  image.style.display = "block";
+  image.src = data.strMealThumb;
   lists.style.display = "flex";
   recipe.style.display = "block";
 
@@ -107,7 +108,6 @@ function displayRecipe(data) {
     }
   }
 
-  image.style.display = "block";
   displayedRecipe = data;
 }
 
