@@ -69,8 +69,8 @@ function displayRecipe(data) {
   recipe.innerText = data.strInstructions;
   title.innerText = data.strMeal;
 
-  image.style.display = "block";
-  image.src = data.strMealThumb;
+  // image.style.display = "block";
+  // image.src = data.strMealThumb;
   lists.style.display = "flex";
   recipe.style.display = "block";
 
@@ -107,6 +107,9 @@ function displayRecipe(data) {
       measures.appendChild(listElement);
     }
   }
+
+  image.style.display = "block";
+  image.src = data.strMealThumb;
 
   displayedRecipe = data;
 }
