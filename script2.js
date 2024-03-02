@@ -64,18 +64,19 @@ async function getRecipe() {
 function displayRecipe(data) {
   saveBtnVisiblity(data);
 
-  console.log("recipe to be displayed inside displayRecipe", data);
+  // console.log("recipe to be displayed inside displayRecipe", data);
 
   recipe.innerText = data.strInstructions;
   title.innerText = data.strMeal;
 
-  // image.style.display = "block";
-  // image.src = data.strMealThumb;
+  image.style.display = "block";
+  image.src = data.strMealThumb;
   lists.style.display = "flex";
   recipe.style.display = "block";
 
   let ingredients = document.querySelector("#ingredients");
   ingredients.innerHTML = "";
+
   for (const key in data) {
     const regex = /strIngredient/;
     if (
@@ -108,9 +109,6 @@ function displayRecipe(data) {
     }
   }
 
-  image.style.display = "block";
-  image.src = data.strMealThumb;
-
   displayedRecipe = data;
 }
 
@@ -122,7 +120,7 @@ function saveLocally(data) {
   saveBtn.style.display = "none";
   let mealID = data.idMeal;
   let savedRecipesArray = JSON.parse(localStorage.getItem("savedData"));
-  console.log("local storage beofre item save", savedRecipesArray);
+  // console.log("local storage beofre item save", savedRecipesArray);
   if (!Array.isArray(savedRecipesArray)) {
     savedRecipesArray = [];
   }
@@ -135,7 +133,7 @@ function saveLocally(data) {
   savedRecipesArray.push(data);
   localStorage.setItem("savedData", JSON.stringify(savedRecipesArray));
 
-  console.log("local storage after item has been saved", savedRecipesArray);
+  // console.log("local storage after item has been saved", savedRecipesArray);
   displaySavedRecipes();
   saveBtnVisiblity(data);
 }
@@ -159,7 +157,7 @@ function displaySavedRecipes() {
 function removeRecipe(el) {
   let parentId = el.parentElement.id;
   let savedRecipesArray = JSON.parse(localStorage.getItem("savedData"));
-  console.log("localStorage before item has been removed", savedRecipesArray);
+  // console.log("localStorage before item has been removed", savedRecipesArray);
 
   for (let i = 0; i < savedRecipesArray.length; i++) {
     if (savedRecipesArray[i]["strMeal"] === parentId) {
@@ -170,24 +168,26 @@ function removeRecipe(el) {
   }
 
   localStorage.setItem("savedData", JSON.stringify(savedRecipesArray));
-  console.log("localStorage after item been removed:", savedRecipesArray);
+  // console.log("localStorage after item been removed:", savedRecipesArray);
 
   if (savedRecipesArray.length === 0) {
     localStorage.removeItem("savedData");
   }
-
+  if (recipe.innerHTML === "") {
+    saveBtn.style.display = "none";
+  }
   displaySavedRecipes();
 }
 
 function showRecipe(element) {
   let id = element.id;
   let savedRecipesArray = JSON.parse(localStorage.getItem("savedData"));
-  console.log("local storage inside showRecipe", savedRecipesArray);
+  // console.log("local storage inside showRecipe", savedRecipesArray);
 
   if (!savedRecipesArray || savedRecipesArray.length === 0) return;
   for (const recipe of savedRecipesArray) {
     if (recipe["strMeal"] === id) {
-      console.log("recipe to be displayed inside showRecipe()", recipe);
+      // console.log("recipe to be displayed inside showRecipe()", recipe);
       displayRecipe(recipe);
     }
   }

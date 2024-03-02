@@ -22,12 +22,6 @@ body {
 }
 
 main {
-  /* background-image: url("preview.jpg");
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-attachment: fixed;
-  background-size: cover; */
-
   grid-area: 1 / 2 / 2 / 3;
   display: flex;
   justify-content: flex-start;
@@ -212,7 +206,7 @@ ul {
     background: rgba(10, 142, 145, 0.589);
     background: linear-gradient(
       180deg,
-      rgb(2, 78, 35) 0%,
+      /* rgb(2, 78, 35) 0%, */ rgba(9, 122, 58, 0.336) 0%,
       rgba(67, 114, 49, 0.61) 30%,
       rgba(107, 194, 145, 0.158) 100%
     );
@@ -241,6 +235,7 @@ ul {
     margin: 0;
     max-width: 80vw;
     max-height: 50vh;
+    box-shadow: 1.5rem 1rem rgba(5, 112, 80, 0.336);
   }
   input {
     width: 70vw;
@@ -248,11 +243,9 @@ ul {
 
   #savedRecipes {
     width: 70vw;
+    margin-bottom: 1vh;
   }
 
-  #save {
-    height: 4vh;
-  }
   .recipe {
     max-width: 90vw;
   }
