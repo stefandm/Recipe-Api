@@ -18,7 +18,7 @@ body {
   grid-template-columns: 15vw 80vw;
   grid-template-rows: 100%;
 
-  scroll-behavior: smooth;
+  scroll-behavior: auto;
 }
 
 main {
@@ -108,14 +108,13 @@ input:focus {
   padding: 0.3rem 0 0.3rem 0;
   margin-top: 2vh;
   border: none;
-  opacity: 0.8;
+  /* opacity: 0.8; */
   color: rgb(5, 131, 22);
 }
 
 #save:hover > i {
   color: rgba(26, 216, 67, 0.986);
   transform: scale(105%);
-  transition: 0.3s ease;
 }
 
 .lists {

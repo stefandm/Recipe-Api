@@ -55,7 +55,7 @@ async function getRecipe() {
     ingredients.innerHTML = ``;
     measures.innerHTML = ``;
     image.src = "";
-    saveBtn.style.display = "none";
+    saveBtn.style.visibility = "hidden";
     clearInput();
     console.error("Rejected", err);
   }
@@ -117,7 +117,7 @@ function clearInput() {
 }
 
 function saveLocally(data) {
-  saveBtn.style.display = "none";
+  saveBtn.style.visibility = "hidden";
   let mealID = data.idMeal;
   let savedRecipesArray = JSON.parse(localStorage.getItem("savedData"));
   // console.log("local storage beofre item save", savedRecipesArray);
@@ -163,7 +163,7 @@ function removeRecipe(el) {
     if (savedRecipesArray[i]["strMeal"] === parentId) {
       savedRecipesArray.splice(i, 1);
       i--;
-      saveBtn.style.display = "block";
+      saveBtn.style.visibility = "visible";
     }
   }
 
@@ -174,7 +174,7 @@ function removeRecipe(el) {
     localStorage.removeItem("savedData");
   }
   if (recipe.innerHTML === "") {
-    saveBtn.style.display = "none";
+    saveBtn.style.visibility = "hidden";
   }
   displaySavedRecipes();
 }
@@ -194,13 +194,13 @@ function showRecipe(element) {
 }
 
 function saveBtnVisiblity(data) {
-  saveBtn.style.display = "block";
+  saveBtn.style.visibility = "visible";
   let savedRecipesArray = JSON.parse(localStorage.getItem("savedData"));
   if (!savedRecipesArray || savedRecipesArray.length === 0) return;
 
   for (const recipe of savedRecipesArray) {
     if (JSON.stringify(data) === JSON.stringify(recipe)) {
-      saveBtn.style.display = "none";
+      saveBtn.style.visibility = "hidden";
       break;
     }
   }
